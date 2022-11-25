@@ -82,4 +82,5 @@
   - Commands: combination of expressed intent
   - Events: describe something that has occurred in the application. e.g. account opened, funds deposited
   - Queries: 
+- Aggregate: entity or group of entities that is always kept in a consistent state.
   
