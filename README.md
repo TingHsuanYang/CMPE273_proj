@@ -30,7 +30,6 @@
 
     Here I cam using docker desktop on Mac, by clicking `Use Docker Compose V2` we can use `docker-compose command directly in our terminal.![docker-compose](image/docker-compose.png)
 
-
     ```shell
     docker-compose up -d
     ```  
@@ -40,7 +39,6 @@
 - Run MongoDB  
 
     Download Client Tools – [Studio 3T Free](https://studio3t.com/download/): ![studio_3t](image/studio_3t.png)
-
 
     Run in Docker:
 
@@ -81,6 +79,11 @@
 - Messages:
   - Commands: combination of expressed intent
   - Events: describe something that has occurred in the application. e.g. account opened, funds deposited
-  - Queries: 
+  - Queries:
 - Aggregate: entity or group of entities that is always kept in a consistent state.
-  
+- Event Store: database that stores a sequence of events over time.
+  - **append only**.
+  - events should represent the version or state of an aggregate.
+  - events are stored in chronological order.
+  - the state of aggregate can be recreated by replaying the event store
+  - optimistic concurrency control
