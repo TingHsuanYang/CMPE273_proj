@@ -80,6 +80,6 @@
 
 - Messages:
   - Commands: combination of expressed intent
-  - Events:
-  - Queries:
+  - Events: describe something that has occurred in the application. e.g. account opened, funds deposited
+  - Queries: 
   
