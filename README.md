@@ -75,3 +75,11 @@
     ```
 
     Open the browser and go to [127.0.0.1:8080](http://127.0.0.1:8080/) ![adminer](image/adminer.png)
+
+## CQRS & Event Sourcing with Kafka
+
+- Messages:
+  - Commands: combination of expressed intent
+  - Events:
+  - Queries:
+  
