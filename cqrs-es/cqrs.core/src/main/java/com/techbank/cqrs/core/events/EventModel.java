@@ -11,7 +11,7 @@ import java.util.Date;
 @Builder
 @Document(collection = "eventStore")
 public class EventModel {
-    
+
     @Id
     private String id;
     private Date timeStamp;
