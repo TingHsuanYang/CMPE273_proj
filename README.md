@@ -87,3 +87,17 @@
   - events are stored in chronological order.
   - the state of aggregate can be recreated by replaying the event store
   - optimistic concurrency control
+
+## Kafka
+
+![kafka](image/kafka.jpeg)
+![broker](image/broker.png)
+
+- Producer: send or produce messages to Kafka topics
+- Consumer: consume message from the topic subscribed
+- Broker:
+  - server running in a cluster(in a form of container).
+  - it can handle thousands of messages without a performance impact.
+  - Partition: Topics are divided into partitions in the cluster. The partitions are replicated across brokers.
+  - Topic: a channel(queue) which event data is streamed.
+- Apache Zookeeper: manage the state of the cluster(broker). e.g. election of the broker leader.
