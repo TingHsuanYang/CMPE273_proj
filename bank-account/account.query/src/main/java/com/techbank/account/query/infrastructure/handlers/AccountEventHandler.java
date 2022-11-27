@@ -9,20 +9,17 @@ import com.techbank.account.query.domain.BankAccount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-
 @Service
 public class AccountEventHandler implements EventHandler {
     @Autowired
     private AccountRepository accountRepository;
-
 
     @Override
     public void on(AccountOpenedEvent event) {
         var bankAccount = BankAccount.builder()
                 .id(event.getId())
                 .accountHolder(event.getAccountHolder())
-                .creationDate(new Date())
+                .creationDate(event.getCreatedDate())
                 .accountType(event.getAccountType())
                 .balance(event.getOpeningBalance())
                 .build();

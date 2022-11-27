@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AccountEventProducer implements EventProducer {
-
     @Autowired
     private KafkaTemplate<String, Object> kafkaTemplate;
 

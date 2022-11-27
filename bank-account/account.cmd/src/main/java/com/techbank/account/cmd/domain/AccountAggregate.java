@@ -19,7 +19,7 @@ public class AccountAggregate extends AggregateRoot {
         raiseEvent(AccountOpenedEvent.builder()
                 .id(command.getId())
                 .accountHolder(command.getAccountHolder())
-                .createDate(new Date())
+                .createdDate(new Date())
                 .accountType(command.getAccountType())
                 .openingBalance(command.getOpeningBalance())
                 .build());
@@ -39,8 +39,7 @@ public class AccountAggregate extends AggregateRoot {
         if (!this.active) {
             throw new IllegalStateException("Funds cannot be deposited into a closed account!");
         }
-
-        if (amount < -0) {
+        if (amount <= 0) {
             throw new IllegalStateException("The deposit amount must be greater than 0!");
         }
         raiseEvent(FundsDepositedEvent.builder()
@@ -66,7 +65,7 @@ public class AccountAggregate extends AggregateRoot {
 
     public void apply(FundsWithdrawnEvent event) {
         this.id = event.getId();
-        this.balance += event.getAmount();
+        this.balance -= event.getAmount();
     }
 
     public void closeAccount() {
@@ -82,5 +81,4 @@ public class AccountAggregate extends AggregateRoot {
         this.id = event.getId();
         this.active = false;
     }
-
 }

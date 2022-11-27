@@ -27,4 +27,5 @@ public class CommandApplication {
         commandDispatcher.registerHandler(WithdrawFundsCommand.class, commandHandler::handle);
         commandDispatcher.registerHandler(CloseAccountCommand.class, commandHandler::handle);
     }
+
 }

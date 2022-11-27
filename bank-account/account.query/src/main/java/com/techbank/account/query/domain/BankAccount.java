@@ -11,19 +11,16 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Data
 @Entity
-@NoArgsConstructor
 public class BankAccount extends BaseEntity {
-
     @Id
     private String id;
     private String accountHolder;
     private Date creationDate;
     private AccountType accountType;
     private double balance;
-
 }

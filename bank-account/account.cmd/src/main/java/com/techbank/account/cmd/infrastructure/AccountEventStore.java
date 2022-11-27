@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class AccountEventStore implements EventStore {
-
     @Autowired
     private EventProducer eventProducer;
+
     @Autowired
     private EventStoreRepository eventStoreRepository;
 
@@ -32,6 +32,7 @@ public class AccountEventStore implements EventStore {
         var version = expectedVersion;
         for (var event : events) {
             version++;
+            event.setVersion(version);
             var eventModel = EventModel.builder()
                     .timeStamp(new Date())
                     .aggregateIdentifier(aggregateId)
